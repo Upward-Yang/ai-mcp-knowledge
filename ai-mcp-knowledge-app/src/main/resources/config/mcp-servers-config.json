@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "D:\\tool\\NodeJs\\setuped\\npx.cmd",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:\\Users\\yangjian\\Desktop",
+        "C:\\Users\\yangjian\\Desktop"
+      ]
+    },
+    "mcp-server-computer": {
+      "command": "D:\\tool\\jdk\\setuped\\Java\\jdk-17.0.13\\bin\\java.exe",
+      "args": [
+        "-Dfile.encoding=utf-8",
+        "-Dspring.ai.mcp.server.stdio=true",
+        "-jar",
+        "G:\\XFG\\码农会所\\业务项目\\DeepSeek-RAG知识库系统\\mcp-server-computer\\target\\mcp-server-computer-1.0.0.jar"
+      ]
+    }
+  }
+}
+

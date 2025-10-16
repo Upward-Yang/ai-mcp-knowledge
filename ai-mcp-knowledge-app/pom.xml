@@ -6,7 +6,7 @@
     <parent>
         <groupId>cn.bugstack</groupId>
         <artifactId>ai-mcp-knowledge</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0</version>
     </parent>
 
     <artifactId>ai-mcp-knowledge-app</artifactId>
