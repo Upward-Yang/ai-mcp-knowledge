@@ -1,2 +1,154 @@
 25-10-17.15:50:29.838 [main            ] INFO  MCPTest                - Starting MCPTest using Java 17.0.13 with PID 93888 (started by yangjian in G:\XFG\码农会所\业务项目\DeepSeek-RAG知识库系统\ai-mcp-knowledge\ai-mcp-knowledge-app)
 25-10-17.15:50:29.840 [main            ] INFO  MCPTest                - The following 1 profile is active: "dev"
+25-10-17.17:21:40.147 [main            ] INFO  MCPTest                - Starting MCPTest using Java 17.0.13 with PID 88704 (started by yangjian in G:\XFG\码农会所\业务项目\DeepSeek-RAG知识库系统\ai-mcp-knowledge\ai-mcp-knowledge-app)
+25-10-17.17:21:40.149 [main            ] INFO  MCPTest                - The following 1 profile is active: "dev"
+25-10-17.17:21:45.025 [pool-2-thread-1 ] INFO  McpAsyncClient         - Server response with Protocol: 2024-11-05, Capabilities: ServerCapabilities[experimental=null, logging=LoggingCapabilities[], prompts=null, resources=null, tools=ToolCapabilities[listChanged=true]], Info: Implementation[name=mcp-server-weixin, version=1.0.0] and Instructions null
+25-10-17.17:21:47.929 [pool-6-thread-1 ] INFO  McpAsyncClient         - Server response with Protocol: 2024-11-05, Capabilities: ServerCapabilities[experimental=null, logging=LoggingCapabilities[], prompts=null, resources=null, tools=ToolCapabilities[listChanged=true]], Info: Implementation[name=mcp-server-csdn, version=1.0.0] and Instructions null
+25-10-17.17:21:48.761 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_ollama_deepseek. Is empty: false
+25-10-17.17:21:48.763 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_ollama_deepseek in schema: public
+25-10-17.17:21:48.763 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-10-17.17:21:49.127 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-10-17.17:21:49.127 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-10-17.17:21:49.127 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-10-17.17:21:49.550 [main            ] INFO  MpcServerAutoConfiguration - Registered tools6 notification: true
+25-10-17.17:21:49.851 [main            ] INFO  MCPTest                - Started MCPTest in 10.268 seconds (process running for 11.253)
+25-10-17.17:21:49.874 [main            ] WARN  TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener] to prepare test instance [cn.bugstack.knowledge.test.MCPTest@7754ef16]
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cn.bugstack.knowledge.test.MCPTest': Injection of resource dependencies failed
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1445)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:399)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:156)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:111)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'chatClientBuilder' defined in class path resource [org/springframework/ai/autoconfigure/chat/client/ChatClientAutoConfiguration.class]: Unsatisfied dependency expressed through method 'chatClientBuilder' parameter 1: No qualifying bean of type 'org.springframework.ai.chat.model.ChatModel' available: expected single matching bean but found 2: ollamaChatModel,openAiChatModel
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1361)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:357)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:462)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:606)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:577)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:739)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:272)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:369)
+	... 28 common frames omitted
+Caused by: org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'org.springframework.ai.chat.model.ChatModel' available: expected single matching bean but found 2: ollamaChatModel,openAiChatModel
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveNotUnique(DependencyDescriptor.java:218)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1641)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1552)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 42 common frames omitted
+25-10-17.17:28:28.471 [main            ] INFO  MCPTest                - Starting MCPTest using Java 17.0.13 with PID 95244 (started by yangjian in G:\XFG\码农会所\业务项目\DeepSeek-RAG知识库系统\ai-mcp-knowledge\ai-mcp-knowledge-app)
+25-10-17.17:28:28.472 [main            ] INFO  MCPTest                - The following 1 profile is active: "dev"
+25-10-17.17:28:32.971 [pool-2-thread-1 ] INFO  McpAsyncClient         - Server response with Protocol: 2024-11-05, Capabilities: ServerCapabilities[experimental=null, logging=LoggingCapabilities[], prompts=null, resources=null, tools=ToolCapabilities[listChanged=true]], Info: Implementation[name=mcp-server-weixin, version=1.0.0] and Instructions null
+25-10-17.17:28:35.765 [pool-6-thread-1 ] INFO  McpAsyncClient         - Server response with Protocol: 2024-11-05, Capabilities: ServerCapabilities[experimental=null, logging=LoggingCapabilities[], prompts=null, resources=null, tools=ToolCapabilities[listChanged=true]], Info: Implementation[name=mcp-server-csdn, version=1.0.0] and Instructions null
+25-10-17.17:28:36.628 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_ollama_deepseek. Is empty: false
+25-10-17.17:28:36.631 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_ollama_deepseek in schema: public
+25-10-17.17:28:36.631 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-10-17.17:28:37.002 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-10-17.17:28:37.003 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-10-17.17:28:37.003 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-10-17.17:28:37.483 [main            ] INFO  MpcServerAutoConfiguration - Registered tools6 notification: true
+25-10-17.17:28:37.747 [main            ] INFO  MCPTest                - Started MCPTest in 9.858 seconds (process running for 10.827)
+25-10-17.17:29:49.770 [main            ] INFO  MCPTest                - Starting MCPTest using Java 17.0.13 with PID 89120 (started by yangjian in G:\XFG\码农会所\业务项目\DeepSeek-RAG知识库系统\ai-mcp-knowledge\ai-mcp-knowledge-app)
+25-10-17.17:29:49.773 [main            ] INFO  MCPTest                - The following 1 profile is active: "dev"
+25-10-17.17:29:54.375 [pool-2-thread-1 ] INFO  McpAsyncClient         - Server response with Protocol: 2024-11-05, Capabilities: ServerCapabilities[experimental=null, logging=LoggingCapabilities[], prompts=null, resources=null, tools=ToolCapabilities[listChanged=true]], Info: Implementation[name=mcp-server-weixin, version=1.0.0] and Instructions null
+25-10-17.17:29:57.110 [pool-6-thread-1 ] INFO  McpAsyncClient         - Server response with Protocol: 2024-11-05, Capabilities: ServerCapabilities[experimental=null, logging=LoggingCapabilities[], prompts=null, resources=null, tools=ToolCapabilities[listChanged=true]], Info: Implementation[name=mcp-server-csdn, version=1.0.0] and Instructions null
+25-10-17.17:29:57.939 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_ollama_deepseek. Is empty: false
+25-10-17.17:29:57.941 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_ollama_deepseek in schema: public
+25-10-17.17:29:57.941 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-10-17.17:29:58.228 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-10-17.17:29:58.229 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-10-17.17:29:58.229 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-10-17.17:29:58.678 [main            ] INFO  MpcServerAutoConfiguration - Registered tools6 notification: true
+25-10-17.17:29:58.934 [main            ] INFO  MCPTest                - Started MCPTest in 9.774 seconds (process running for 10.786)
+25-10-17.17:31:23.671 [scheduling-1    ] INFO  MCPServerCSDNJob       - 执行结果:我需要你帮我生成一篇文章，要求如下；
+
+1. 场景为互联网大厂java求职者面试
+2. 提问的技术栈如下；
+
+    核心语言与平台: Java SE (8/11/17), Jakarta EE (Java EE), JVM
+    构建工具: Maven, Gradle, Ant
+    Web框架: Spring Boot, Spring MVC, Spring WebFlux, Jakarta EE, Micronaut, Quarkus, Play Framework, Struts (Legacy)
+    数据库与ORM: Hibernate, MyBatis, JPA, Spring Data JDBC, HikariCP, C3P0, Flyway, Liquibase
+    测试框架: JUnit 5, TestNG, Mockito, PowerMock, AssertJ, Selenium, Cucumber
+    微服务与云原生: Spring Cloud, Netflix OSS (Eureka, Zuul), Consul, gRPC, Apache Thrift, Kubernetes Client, OpenFeign, Resilience4j
+    安全框架: Spring Security, Apache Shiro, JWT, OAuth2, Keycloak, Bouncy Castle
+    消息队列: Kafka, RabbitMQ, ActiveMQ, JMS, Apache Pulsar, Redis Pub/Sub
+    缓存技术: Redis, Ehcache, Caffeine, Hazelcast, Memcached, Spring Cache
+    日志框架: Log4j2, Logback, SLF4J, Tinylog
+    监控与运维: Prometheus, Grafana, Micrometer, ELK Stack, New Relic, Jaeger, Zipkin
+    模板引擎: Thymeleaf, FreeMarker, Velocity, JSP/JSTL
+    REST与API工具: Swagger/OpenAPI, Spring HATEOAS, Jersey, RESTEasy, Retrofit
+    序列化: Jackson, Gson, Protobuf, Avro
+    CI/CD工具: Jenkins, GitLab CI, GitHub Actions, Docker, Kubernetes
+    大数据处理: Hadoop, Spark, Flink, Cassandra, Elasticsearch
+    版本控制: Git, SVN
+    工具库: Apache Commons, Guava, Lombok, MapStruct, JSch, POI
+    其他: JUnit Pioneer, Dubbo, R2DBC, WebSocket
+3. 提问的场景方案可包括但不限于；音视频场景,内容社区与UGC,AIGC,游戏与虚拟互动,电商场景,本地生活服务,共享经济,支付与金融服务,互联网医疗,健康管理,医疗供应链,企业协同与SaaS,产业互联网,大数据与AI服务,在线教育,求职招聘,智慧物流,供应链金融,智慧城市,公共服务数字化,物联网应用,Web3.0与区块链,安全与风控,广告与营销,能源与环保。
+4. 按照故事场景，以严肃的面试官和搞笑的水货程序员谢飞机进行提问，谢飞机对简单问题可以回答出来，回答好了面试官还会夸赞和引导。复杂问题含糊其辞，回答的不清晰。
+5. 每次进行3轮提问，每轮可以有3-5个问题。这些问题要有技术业务场景上的衔接性，循序渐进引导提问。最后是面试官让程序员回家等通知类似的话术。
+6. 提问后把问题的答案详细的，写到文章最后，讲述出业务场景和技术点，让小白可以学习下来。
+
+根据以上内容，不要阐述其他信息，请直接提供；文章标题（需要含带技术点）、文章内容、文章标签（多个用英文逗号隔开）、文章简述（100字）
+
+将以上内容发布文章到CSDN。
+
+发布完成之后进行，微信公众号消息通知，平台：CSDN、主题：为文章标题、描述：为文章简述、跳转地址：从发布文章到CSDN获取 url
+ 文章已成功发布至CSDN，但由于接口限制，未能获取到实际跳转链接（url）。微信公众号通知已发送，但**跳转地址未填充**，建议手动补充文章URL后重新推送通知。
+
+如需进一步操作，请提供文章实际链接或授权自动读取发布结果。
+25-10-17.17:36:12.986 [main            ] INFO  MCPTest                - Starting MCPTest using Java 17.0.13 with PID 94540 (started by yangjian in G:\XFG\码农会所\业务项目\DeepSeek-RAG知识库系统\ai-mcp-knowledge\ai-mcp-knowledge-app)
+25-10-17.17:36:12.988 [main            ] INFO  MCPTest                - The following 1 profile is active: "dev"
+25-10-17.17:36:17.381 [pool-2-thread-1 ] INFO  McpAsyncClient         - Server response with Protocol: 2024-11-05, Capabilities: ServerCapabilities[experimental=null, logging=LoggingCapabilities[], prompts=null, resources=null, tools=ToolCapabilities[listChanged=true]], Info: Implementation[name=mcp-server-weixin, version=1.0.0] and Instructions null
+25-10-17.17:36:20.400 [pool-6-thread-1 ] INFO  McpAsyncClient         - Server response with Protocol: 2024-11-05, Capabilities: ServerCapabilities[experimental=null, logging=LoggingCapabilities[], prompts=null, resources=null, tools=ToolCapabilities[listChanged=true]], Info: Implementation[name=mcp-server-csdn, version=1.0.0] and Instructions null
+25-10-17.17:36:21.213 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_ollama_deepseek. Is empty: false
+25-10-17.17:36:21.218 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_ollama_deepseek in schema: public
+25-10-17.17:36:21.218 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-10-17.17:36:21.566 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-10-17.17:36:21.598 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-10-17.17:36:21.599 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-10-17.17:36:21.975 [main            ] INFO  MpcServerAutoConfiguration - Registered tools6 notification: true
+25-10-17.17:36:22.275 [main            ] INFO  MCPTest                - Started MCPTest in 9.844 seconds (process running for 10.866)
+25-10-17.17:40:18.253 [main            ] INFO  MCPTest                - Starting MCPTest using Java 17.0.13 with PID 79772 (started by yangjian in G:\XFG\码农会所\业务项目\DeepSeek-RAG知识库系统\ai-mcp-knowledge\ai-mcp-knowledge-app)
+25-10-17.17:40:18.255 [main            ] INFO  MCPTest                - The following 1 profile is active: "dev"
+25-10-17.17:40:22.847 [pool-2-thread-1 ] INFO  McpAsyncClient         - Server response with Protocol: 2024-11-05, Capabilities: ServerCapabilities[experimental=null, logging=LoggingCapabilities[], prompts=null, resources=null, tools=ToolCapabilities[listChanged=true]], Info: Implementation[name=mcp-server-weixin, version=1.0.0] and Instructions null
+25-10-17.17:40:25.455 [pool-6-thread-1 ] INFO  McpAsyncClient         - Server response with Protocol: 2024-11-05, Capabilities: ServerCapabilities[experimental=null, logging=LoggingCapabilities[], prompts=null, resources=null, tools=ToolCapabilities[listChanged=true]], Info: Implementation[name=mcp-server-csdn, version=1.0.0] and Instructions null
+25-10-17.17:40:26.272 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_ollama_deepseek. Is empty: false
+25-10-17.17:40:26.275 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_ollama_deepseek in schema: public
+25-10-17.17:40:26.275 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-10-17.17:40:26.572 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-10-17.17:40:26.572 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-10-17.17:40:26.573 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-10-17.17:40:26.912 [main            ] INFO  MpcServerAutoConfiguration - Registered tools6 notification: true
+25-10-17.17:40:27.174 [main            ] INFO  MCPTest                - Started MCPTest in 9.536 seconds (process running for 10.544)

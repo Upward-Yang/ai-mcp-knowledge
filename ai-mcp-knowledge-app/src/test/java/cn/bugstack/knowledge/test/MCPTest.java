@@ -8,6 +8,7 @@ import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.openai.OpenAiChatOptions;
 import org.springframework.ai.tool.ToolCallbackProvider;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -26,11 +27,9 @@ import static org.springframework.ai.chat.client.advisor.AbstractChatMemoryAdvis
 public class MCPTest {
 
     @Resource
-    private ChatClient.Builder chatClientBuilder;
-
-    @Resource
     private ChatClient chatClient;
 
+    @Qualifier("syncMcpToolCallbackProvider")
     @Autowired
     private ToolCallbackProvider tools;
 
