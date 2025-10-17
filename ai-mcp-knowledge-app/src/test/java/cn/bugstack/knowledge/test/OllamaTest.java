@@ -1,6 +1,5 @@
 package cn.bugstack.knowledge.test;
 
-import cn.bugstack.knowledge.test.Utils.TokenTextSplitterWithContext;
 import com.alibaba.fastjson2.JSON;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -115,8 +114,7 @@ public class OllamaTest {
         TikaDocumentReader reader = new TikaDocumentReader("./data/file.txt");
 
         List<Document> documents = reader.get();
-        TokenTextSplitterWithContext splitter = new TokenTextSplitterWithContext(100, 20);
-        List<Document> documentSplitterList = splitter.split(documents);
+        List<Document> documentSplitterList = tokenTextSplitter.split(documents);
 
         documents.forEach(doc -> doc.getMetadata().put("knowledge", "ai知识库"));
         documentSplitterList.forEach(doc -> doc.getMetadata().put("knowledge", "ai知识库"));

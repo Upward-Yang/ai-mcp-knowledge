@@ -6,9 +6,11 @@ import org.springframework.ai.chat.client.DefaultChatClientBuilder;
 import org.springframework.ai.chat.client.observation.ChatClientObservationConvention;
 import org.springframework.ai.document.MetadataMode;
 import org.springframework.ai.openai.OpenAiChatModel;
+import org.springframework.ai.openai.OpenAiChatOptions;
 import org.springframework.ai.openai.OpenAiEmbeddingModel;
 import org.springframework.ai.openai.OpenAiEmbeddingOptions;
 import org.springframework.ai.openai.api.OpenAiApi;
+import org.springframework.ai.tool.ToolCallbackProvider;
 import org.springframework.ai.transformer.splitter.TokenTextSplitter;
 import org.springframework.ai.vectorstore.SimpleVectorStore;
 import org.springframework.ai.vectorstore.pgvector.PgVectorStore;
@@ -41,8 +43,16 @@ public class OpenAIConfig {
     }
 
     @Bean
-    public ChatClient.Builder chatClientBuilder(OpenAiChatModel openAiChatModel) {
-        return new DefaultChatClientBuilder(openAiChatModel, ObservationRegistry.NOOP, (ChatClientObservationConvention) null);
+    public ChatClient chatClient(OpenAiChatModel openAiChatModel, ToolCallbackProvider tools
+            , @Value("${spring.ai.openai.chat-model}") String chatModel) {
+        DefaultChatClientBuilder defaultChatClientBuilder
+                = new DefaultChatClientBuilder(openAiChatModel, ObservationRegistry.NOOP, (ChatClientObservationConvention) null);
+        return defaultChatClientBuilder
+                .defaultTools(tools)
+                .defaultOptions(OpenAiChatOptions.builder()
+                        .model(chatModel)
+                        .build())
+                .build();
     }
 
     @Bean("openAiSimpleVectorStore")
@@ -66,10 +76,12 @@ public class OpenAIConfig {
      * SELECT * FROM vector_store_openai
      */
     @Bean("openAiPgVectorStore")
-    public PgVectorStore pgVectorStore(OpenAiApi openAiApi, JdbcTemplate jdbcTemplate) {
+    public PgVectorStore pgVectorStore(OpenAiApi openAiApi, JdbcTemplate jdbcTemplate
+            , @Value("${spring.ai.openai.embedding-model}") String embeddingModelStr
+            , @Value("${spring.ai.openai.embedding.options.num-batch}") Integer dimensions) {
         OpenAiEmbeddingOptions openAiEmbeddingOptions =
                 OpenAiEmbeddingOptions.builder()
-                        .model("text-embedding-v4").dimensions(1536).build();
+                        .model(embeddingModelStr).dimensions(dimensions).build();
         OpenAiEmbeddingModel embeddingModel = new OpenAiEmbeddingModel(openAiApi
                 , MetadataMode.EMBED, openAiEmbeddingOptions);
         return PgVectorStore.builder(jdbcTemplate, embeddingModel)

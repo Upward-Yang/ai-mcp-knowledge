@@ -31,13 +31,14 @@ spring:
   ai:
     mcp:
       client:
-        request-timeout: 30s
+        request-timeout: 180s
         stdio:
-          servers-configuration: classpath:/config/mcp-servers-config.json
+          servers-configuration: classpath:/config/mcp-servers-config-3.json
     openai:
       base-url: https://dashscope.aliyuncs.com/compatible-mode/
       api-key: sk-0d2a387e9a1445389d98513280cbb44a
       embedding-model: text-embedding-v4
+      chat-model: qwen-plus
       embedding:
         options:
           num-batch: 1536
