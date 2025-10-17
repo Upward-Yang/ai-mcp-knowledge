@@ -33,7 +33,7 @@ spring:
       client:
         request-timeout: 180s
         stdio:
-          servers-configuration: classpath:/config/mcp-servers-config-3.json
+          servers-configuration: classpath:/config/mcp-servers-config-4.json
     openai:
       base-url: https://dashscope.aliyuncs.com/compatible-mode/
       api-key: sk-0d2a387e9a1445389d98513280cbb44a

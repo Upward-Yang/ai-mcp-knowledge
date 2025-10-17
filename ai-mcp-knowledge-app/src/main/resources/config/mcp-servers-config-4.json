@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "mcp-server-csdn": {
+      "command": "D:\\tool\\jdk\\setuped\\Java\\jdk-17.0.13\\bin\\java.exe",
+      "args": [
+        "-Dfile.encoding=utf-8",
+        "-Dspring.ai.mcp.server.stdio=true",
+        "-jar",
+        "G:\\XFG\\码农会所\\业务项目\\DeepSeek-RAG知识库系统\\mcp-server-csdn\\target\\mcp-server-csdn-1.0.jar",
+        "--csdn.api.categories=Java场景面试宝典",
+        "--csdn.api.cookie=uuid_tt_dd=10_19723129190-1758865997677-619506; fid=20_17797080619-1758866000319-034818; UserName=cherry5230; UserInfo=fe2c3a6858454c158928ab6b88d78fdd; UserToken=fe2c3a6858454c158928ab6b88d78fdd; UserNick=cherry5230; AU=373; UN=cherry5230; BT=1758866029006; p_uid=U010000; dc_sid=36b4c34b178c8403223e12bf81d60666; c_segment=2; Hm_lvt_6bcd52f51e9b3dce32bec4a3997715ac=1758866001,1759991784; HMACCOUNT=3D7311F7FF3E8C9C; csdn_newcert_cherry5230=1; c_dl_prid=-; c_dl_rid=1760602964640_111028; c_dl_fref=https://www.baidu.com/link; c_dl_fpage=/download/qq_36462452/91412278; c_dl_um=-; Hm_lpvt_6bcd52f51e9b3dce32bec4a3997715ac=1760602966; _clck=kwo85p%5E2%5Eg07%5E0%5E2115; _clsk=1h6x51p%5E1760602967227%5E1%5E0%5Ei.clarity.ms%2Fcollect; vip_auto_popup=1; redpack_close_time_v2=1; dc_session_id=10_1760618652675.275745; c_first_ref=articles.zsxq.com; c_first_page=https%3A//editor.csdn.net/md/; c_dsid=11_1760618654216.882981; creative_btn_mp=3; c_pref=https%3A//mp.csdn.net/mp_blog/creation/editor%3Fnot_checkout%3D1%26spm%3D1011.2415.3001.6192; c_ref=https%3A//mp.csdn.net/; c_page_id=default; log_Id_pv=19; log_Id_view=275; log_Id_click=27; dc_tos=t486h4"
+      ]
+    },
+    "mcp-server-weixin": {
+      "command": "D:\\tool\\jdk\\setuped\\Java\\jdk-17.0.13\\bin\\java.exe",
+      "args": [
+        "-Dfile.encoding=utf-8",
+        "-Dspring.ai.mcp.server.stdio=true",
+        "-jar",
+        "G:\\XFG\\码农会所\\业务项目\\DeepSeek-RAG知识库系统\\mcp-server-weixin\\target\\mcp-server-weixin-1.0.jar"
+      ]
+    }
+  }
+}

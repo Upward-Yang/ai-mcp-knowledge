@@ -3,7 +3,10 @@ package cn.bugstack.knowledge.config;
 import io.micrometer.observation.ObservationRegistry;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.DefaultChatClientBuilder;
+import org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor;
 import org.springframework.ai.chat.client.observation.ChatClientObservationConvention;
+import org.springframework.ai.chat.memory.ChatMemory;
+import org.springframework.ai.chat.memory.InMemoryChatMemory;
 import org.springframework.ai.document.MetadataMode;
 import org.springframework.ai.openai.OpenAiChatModel;
 import org.springframework.ai.openai.OpenAiChatOptions;
@@ -34,6 +37,11 @@ public class OpenAIConfig {
     }
 
     @Bean
+    public ChatMemory chatMemory() {
+        return new InMemoryChatMemory();
+    }
+
+    @Bean
     public OpenAiApi openAiApi(@Value("${spring.ai.openai.base-url}") String baseUrl
             , @Value("${spring.ai.openai.api-key}") String apikey) {
         return OpenAiApi.builder()
@@ -52,6 +60,9 @@ public class OpenAIConfig {
                 .defaultOptions(OpenAiChatOptions.builder()
                         .model(chatModel)
                         .build())
+                // 构建 chatClient 并加入一个 chatMemory，这个可以记录上下文对话信息，把你前面的对话记录下来。
+                // 这样同一个对话，后面可以继续使用前面的对话信息。
+                .defaultAdvisors(new PromptChatMemoryAdvisor(chatMemory()))
                 .build();
     }
 
