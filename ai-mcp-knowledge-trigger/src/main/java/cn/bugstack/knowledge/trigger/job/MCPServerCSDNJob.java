@@ -19,7 +19,7 @@ public class MCPServerCSDNJob {
     @Resource
     private ChatClient chatClient;
 
-    @Scheduled(cron = "0 0 * * * ?")
+    @Scheduled(cron = "0 0/30 * * * ?")
     public void exec() {
         // 检查当前时间是否在允许执行的时间范围内（8点到23点之间）
         int currentHour = java.time.LocalDateTime.now().getHour();

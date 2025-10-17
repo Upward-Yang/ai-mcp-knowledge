@@ -17,7 +17,12 @@
         "-Dfile.encoding=utf-8",
         "-Dspring.ai.mcp.server.stdio=true",
         "-jar",
-        "G:\\XFG\\码农会所\\业务项目\\DeepSeek-RAG知识库系统\\mcp-server-weixin\\target\\mcp-server-weixin-1.0.jar"
+        "G:\\XFG\\码农会所\\业务项目\\DeepSeek-RAG知识库系统\\mcp-server-weixin\\target\\mcp-server-weixin-1.0.jar",
+        "--weixin.api.original_id=gh_457eb150efca",
+        "--weixin.api.app-id=wx0e4587116290f065",
+        "--weixin.api.app-secret=8b2d320e8e8dae11121e072bd179ea4d",
+        "--weixin.api.template_id=0w_CkAkNCqEX1yg3HRxAydA4ekO6Jwc0TDDeUe9b46c",
+        "--weixin.api.touser=ohAQ_6q-0SSfV2aemJeM4vEhsbYY"
       ]
     }
   }
