@@ -32,8 +32,16 @@ spring:
     mcp:
       client:
         request-timeout: 180s
-        stdio:
-          servers-configuration: classpath:/config/mcp-servers-config-4.json
+        #stdio模式打开，sse模式不打开
+#        stdio:
+#          servers-configuration: classpath:/config/mcp-servers-config-4.json
+        sse:
+          connections:
+            mcp-server-csdn:
+              url: http://127.0.0.1:8101
+            mcp-server-weixin:
+              url: http://127.0.0.1:8102
+
     openai:
       base-url: https://dashscope.aliyuncs.com/compatible-mode/
       api-key: sk-0d2a387e9a1445389d98513280cbb44a

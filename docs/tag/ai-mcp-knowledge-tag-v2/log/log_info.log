@@ -1,0 +1,1263 @@
+25-10-20.11:07:32.816 [main            ] INFO  Application            - Starting Application v1.0 using Java 17.0.2 with PID 7 (/ai-mcp-knowledge-app.jar started by root in /)
+25-10-20.11:07:32.818 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-10-20.11:07:37.282 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8090 (http)
+25-10-20.11:07:37.303 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8090"]
+25-10-20.11:07:37.306 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-10-20.11:07:37.307 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.36]
+25-10-20.11:07:37.381 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-10-20.11:07:37.383 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3418 ms
+25-10-20.11:07:38.656 [HttpClient-1-Worker-2] INFO  McpAsyncClient         - Server response with Protocol: 2024-11-05, Capabilities: ServerCapabilities[experimental=null, logging=LoggingCapabilities[], prompts=null, resources=null, tools=ToolCapabilities[listChanged=true]], Info: Implementation[name=mcp-server-csdn, version=1.0.0] and Instructions null
+25-10-20.11:07:38.686 [ForkJoinPool.commonPool-worker-1] ERROR WebFluxSseClientTransport - Fatal SSE error, not retrying: null
+25-10-20.11:07:38.688 [ForkJoinPool.commonPool-worker-1] ERROR Operators              - Operator called default onErrorDropped
+reactor.core.Exceptions$ErrorCallbackNotImplemented: org.springframework.web.reactive.function.client.WebClientRequestException
+Caused by: org.springframework.web.reactive.function.client.WebClientRequestException: null
+	at org.springframework.web.reactive.function.client.ExchangeFunctions$DefaultExchangeFunction.lambda$wrapException$9(ExchangeFunctions.java:137)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Request to GET http://mcp-server-weixin-app:7071/sse [DefaultWebClient]
+Original Stack Trace:
+		at org.springframework.web.reactive.function.client.ExchangeFunctions$DefaultExchangeFunction.lambda$wrapException$9(ExchangeFunctions.java:137)
+		at reactor.core.publisher.MonoErrorSupplied.subscribe(MonoErrorSupplied.java:55)
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4576)
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222)
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222)
+		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onError(MonoIgnoreThen.java:280)
+		at reactor.core.publisher.FluxMap$MapSubscriber.onError(FluxMap.java:134)
+		at reactor.core.publisher.MonoCompletionStage$MonoCompletionStageSubscription.apply(MonoCompletionStage.java:115)
+		at reactor.core.publisher.MonoCompletionStage$MonoCompletionStageSubscription.apply(MonoCompletionStage.java:67)
+		at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+		at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+		at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+		at java.base/java.util.concurrent.CompletableFuture.postFire(CompletableFuture.java:614)
+		at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:844)
+		at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483)
+		at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+		at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+		at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+		at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+		at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+Caused by: java.net.ConnectException: null
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1047)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:230)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:206)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.nio.channels.ClosedChannelException: null
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:195)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:760)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:848)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
+	... 9 common frames omitted
+25-10-20.11:10:16.883 [HttpClient-1-Worker-4] ERROR WebFluxSseClientTransport - Fatal SSE error, not retrying: 200 OK from GET http://mcp-server-csdn-app:8101/sse, but response failed with cause: java.io.IOException: chunked transfer encoding, state: READING_LENGTH
+25-10-20.11:10:16.883 [HttpClient-1-Worker-4] ERROR Operators              - Operator called default onErrorDropped
+reactor.core.Exceptions$ErrorCallbackNotImplemented: org.springframework.web.reactive.function.client.WebClientResponseException: 200 OK from GET http://mcp-server-csdn-app:8101/sse, but response failed with cause: java.io.IOException: chunked transfer encoding, state: READING_LENGTH
+Caused by: org.springframework.web.reactive.function.client.WebClientResponseException: 200 OK from GET http://mcp-server-csdn-app:8101/sse, but response failed with cause: java.io.IOException: chunked transfer encoding, state: READING_LENGTH
+	at org.springframework.web.reactive.function.client.WebClientResponseException.create(WebClientResponseException.java:337)
+	at org.springframework.web.reactive.function.client.DefaultClientResponse.lambda$createException$1(DefaultClientResponse.java:214)
+	at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:106)
+	at reactor.core.publisher.FluxOnErrorReturn$ReturnSubscriber.onError(FluxOnErrorReturn.java:199)
+	at reactor.core.publisher.FluxDefaultIfEmpty$DefaultIfEmptySubscriber.onError(FluxDefaultIfEmpty.java:156)
+	at reactor.core.publisher.FluxOnAssembly$OnAssemblySubscriber.onError(FluxOnAssembly.java:544)
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onError(FluxMapFuseable.java:142)
+	at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onError(FluxContextWrite.java:121)
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableConditionalSubscriber.onError(FluxMapFuseable.java:340)
+	at reactor.core.publisher.FluxFilterFuseable$FilterFuseableConditionalSubscriber.onError(FluxFilterFuseable.java:382)
+	at reactor.core.publisher.MonoCollect$CollectSubscriber.onError(MonoCollect.java:135)
+	at org.springframework.http.client.reactive.AbstractClientHttpResponse$SingleSubscriberPublisher.subscribe(AbstractClientHttpResponse.java:116)
+	at reactor.core.publisher.FluxSource.subscribe(FluxSource.java:71)
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576)
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103)
+	at reactor.core.publisher.FluxOnAssembly$OnAssemblySubscriber.onError(FluxOnAssembly.java:544)
+	at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.maybeOnError(FluxConcatMapNoPrefetch.java:327)
+	at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onError(FluxConcatMapNoPrefetch.java:221)
+	at reactor.core.publisher.FluxBufferPredicate$BufferPredicateSubscriber.onError(FluxBufferPredicate.java:346)
+	at reactor.core.publisher.FluxPeekFuseable$PeekFuseableConditionalSubscriber.onError(FluxPeekFuseable.java:553)
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableConditionalSubscriber.onError(FluxMapFuseable.java:340)
+	at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onError(FluxContextWrite.java:121)
+	at reactor.core.publisher.FluxDoFinally$DoFinallySubscriber.onError(FluxDoFinally.java:119)
+	at reactor.core.publisher.FluxConcatArray$ConcatArraySubscriber.onError(FluxConcatArray.java:186)
+	at reactor.core.publisher.FluxFlattenIterable$FlattenIterableSubscriber.drainAsync(FluxFlattenIterable.java:351)
+	at reactor.core.publisher.FluxFlattenIterable$FlattenIterableSubscriber.drain(FluxFlattenIterable.java:724)
+	at reactor.core.publisher.FluxFlattenIterable$FlattenIterableSubscriber.onError(FluxFlattenIterable.java:263)
+	at reactor.core.publisher.FluxPublish$PublishSubscriber.checkTerminated(FluxPublish.java:625)
+	at reactor.core.publisher.FluxPublish$PublishSubscriber.drain(FluxPublish.java:494)
+	at reactor.core.publisher.FluxPublish$PublishSubscriber.onError(FluxPublish.java:336)
+	at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onError(FluxContextWrite.java:121)
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableConditionalSubscriber.onError(FluxMapFuseable.java:340)
+	at reactor.core.publisher.FluxFlattenIterable$FlattenIterableSubscriber.drainAsync(FluxFlattenIterable.java:351)
+	at reactor.core.publisher.FluxFlattenIterable$FlattenIterableSubscriber.drain(FluxFlattenIterable.java:724)
+	at reactor.core.publisher.FluxFlattenIterable$FlattenIterableSubscriber.onError(FluxFlattenIterable.java:263)
+	at reactor.adapter.JdkFlowAdapter$SubscriberToRS.onError(JdkFlowAdapter.java:155)
+	at java.net.http/jdk.internal.net.http.ResponseSubscribers$PublishingBodySubscriber.complete(ResponseSubscribers.java:935)
+	at java.net.http/jdk.internal.net.http.ResponseSubscribers$PublishingBodySubscriber.lambda$new$1(ResponseSubscribers.java:861)
+	at java.base/java.util.concurrent.CompletableFuture.uniAcceptNow(CompletableFuture.java:757)
+	at java.base/java.util.concurrent.CompletableFuture.uniAcceptStage(CompletableFuture.java:735)
+	at java.base/java.util.concurrent.CompletableFuture.thenAccept(CompletableFuture.java:2182)
+	at java.net.http/jdk.internal.net.http.ResponseSubscribers$PublishingBodySubscriber.lambda$new$2(ResponseSubscribers.java:861)
+	at java.base/java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:863)
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:841)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at java.net.http/jdk.internal.net.http.ResponseSubscribers$PublishingBodySubscriber.signalError(ResponseSubscribers.java:943)
+	at java.net.http/jdk.internal.net.http.ResponseSubscribers$PublishingBodySubscriber.onError(ResponseSubscribers.java:1019)
+	at java.net.http/jdk.internal.net.http.Http1Response$Http1BodySubscriber.propagateError(Http1Response.java:327)
+	at java.net.http/jdk.internal.net.http.Http1Response$Http1BodySubscriber.complete(Http1Response.java:356)
+	at java.net.http/jdk.internal.net.http.Http1Response$Http1BodySubscriber.onError(Http1Response.java:386)
+	at java.net.http/jdk.internal.net.http.Http1Response.lambda$readBody$2(Http1Response.java:468)
+	at java.base/java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:863)
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:841)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at java.net.http/jdk.internal.net.http.Http1Response.onReadError(Http1Response.java:554)
+	at java.net.http/jdk.internal.net.http.Http1Response$BodyReader.onReadError(Http1Response.java:761)
+	at java.net.http/jdk.internal.net.http.Http1AsyncReceiver.checkForErrors(Http1AsyncReceiver.java:302)
+	at java.net.http/jdk.internal.net.http.Http1AsyncReceiver.flush(Http1AsyncReceiver.java:268)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$LockingRestartableTask.run(SequentialScheduler.java:205)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$CompleteRestartableTask.run(SequentialScheduler.java:149)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:230)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.IOException: chunked transfer encoding, state: READING_LENGTH
+	at java.net.http/jdk.internal.net.http.common.Utils.wrapWithExtraDetail(Utils.java:351)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Body from GET http://mcp-server-csdn-app:8101/sse [DefaultClientResponse]
+Original Stack Trace:
+		at java.net.http/jdk.internal.net.http.common.Utils.wrapWithExtraDetail(Utils.java:351)
+		at java.net.http/jdk.internal.net.http.Http1Response$BodyReader.onReadError(Http1Response.java:760)
+		at java.net.http/jdk.internal.net.http.Http1AsyncReceiver.checkForErrors(Http1AsyncReceiver.java:302)
+		at java.net.http/jdk.internal.net.http.Http1AsyncReceiver.flush(Http1AsyncReceiver.java:268)
+		at java.net.http/jdk.internal.net.http.common.SequentialScheduler$LockingRestartableTask.run(SequentialScheduler.java:205)
+		at java.net.http/jdk.internal.net.http.common.SequentialScheduler$CompleteRestartableTask.run(SequentialScheduler.java:149)
+		at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:230)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.EOFException: EOF reached while reading
+	at java.net.http/jdk.internal.net.http.Http1AsyncReceiver$Http1TubeSubscriber.onComplete(Http1AsyncReceiver.java:596)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$ReadSubscription.signalCompletion(SocketTube.java:640)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.read(SocketTube.java:845)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowTask.run(SocketTube.java:181)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:230)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:303)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:256)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.signalReadable(SocketTube.java:774)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$ReadEvent.signalEvent(SocketTube.java:957)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowEvent.handle(SocketTube.java:253)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.handleEvent(HttpClientImpl.java:979)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.lambda$run$3(HttpClientImpl.java:934)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:934)
+25-10-20.11:18:02.560 [main            ] INFO  Application            - Starting Application v1.0 using Java 17.0.2 with PID 7 (/ai-mcp-knowledge-app.jar started by root in /)
+25-10-20.11:18:02.568 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-10-20.11:18:06.747 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port 8090 (http)
+25-10-20.11:18:06.758 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8090"]
+25-10-20.11:18:06.760 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-10-20.11:18:06.760 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/10.1.36]
+25-10-20.11:18:06.797 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-10-20.11:18:06.797 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3223 ms
+25-10-20.11:18:07.815 [HttpClient-1-Worker-0] INFO  McpAsyncClient         - Server response with Protocol: 2024-11-05, Capabilities: ServerCapabilities[experimental=null, logging=LoggingCapabilities[], prompts=null, resources=null, tools=ToolCapabilities[listChanged=true]], Info: Implementation[name=mcp-server-csdn, version=1.0.0] and Instructions null
+25-10-20.11:18:08.258 [HttpClient-2-Worker-1] INFO  McpAsyncClient         - Server response with Protocol: 2024-11-05, Capabilities: ServerCapabilities[experimental=null, logging=LoggingCapabilities[], prompts=null, resources=null, tools=ToolCapabilities[listChanged=true]], Info: Implementation[name=mcp-server-weixin, version=1.0.0] and Instructions null
+25-10-20.11:18:08.343 [HttpClient-1-Worker-1] WARN  DefaultMcpSession      - Unexpected response for unkown id fe31c85e-0
+25-10-20.11:18:08.344 [HttpClient-3-Worker-1] INFO  McpAsyncClient         - Server response with Protocol: 2024-11-05, Capabilities: ServerCapabilities[experimental=null, logging=LoggingCapabilities[], prompts=null, resources=null, tools=ToolCapabilities[listChanged=true]], Info: Implementation[name=mcp-server-csdn, version=1.0.0] and Instructions null
+25-10-20.11:18:08.377 [HttpClient-4-Worker-0] INFO  McpAsyncClient         - Server response with Protocol: 2024-11-05, Capabilities: ServerCapabilities[experimental=null, logging=LoggingCapabilities[], prompts=null, resources=null, tools=ToolCapabilities[listChanged=true]], Info: Implementation[name=mcp-server-weixin, version=1.0.0] and Instructions null
+25-10-20.11:18:08.376 [HttpClient-2-Worker-3] WARN  DefaultMcpSession      - Unexpected response for unkown id 1b882117-0
+25-10-20.11:18:08.409 [HttpClient-3-Worker-1] WARN  DefaultMcpSession      - Unexpected response for unkown id 9fc1ae24-1
+25-10-20.11:18:08.438 [HttpClient-4-Worker-2] WARN  DefaultMcpSession      - Unexpected response for unkown id 2ee7478e-1
+25-10-20.11:18:08.467 [HttpClient-3-Worker-1] WARN  DefaultMcpSession      - Unexpected response for unkown id 9fc1ae24-2
+25-10-20.11:18:08.474 [HttpClient-4-Worker-2] WARN  DefaultMcpSession      - Unexpected response for unkown id 2ee7478e-2
+25-10-20.11:18:08.616 [HttpClient-3-Worker-1] WARN  DefaultMcpSession      - Unexpected response for unkown id 9fc1ae24-3
+25-10-20.11:18:08.628 [HttpClient-4-Worker-2] WARN  DefaultMcpSession      - Unexpected response for unkown id 2ee7478e-3
+25-10-20.11:18:09.020 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_ollama_deepseek. Is empty: false
+25-10-20.11:18:09.024 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_ollama_deepseek in schema: public
+25-10-20.11:18:09.024 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-10-20.11:18:09.450 [main            ] INFO  PgVectorStore          - Using the vector table name: vector_store_openai. Is empty: false
+25-10-20.11:18:09.451 [main            ] INFO  PgVectorStore          - Initializing PGVectorStore schema for table: vector_store_openai in schema: public
+25-10-20.11:18:09.451 [main            ] INFO  PgVectorStore          - vectorTableValidationsEnabled false
+25-10-20.11:18:09.755 [HttpClient-3-Worker-1] WARN  DefaultMcpSession      - Unexpected response for unkown id 9fc1ae24-4
+25-10-20.11:18:09.761 [HttpClient-4-Worker-2] WARN  DefaultMcpSession      - Unexpected response for unkown id 2ee7478e-4
+25-10-20.11:18:09.795 [HttpClient-3-Worker-1] WARN  DefaultMcpSession      - Unexpected response for unkown id 9fc1ae24-5
+25-10-20.11:18:09.803 [HttpClient-4-Worker-2] WARN  DefaultMcpSession      - Unexpected response for unkown id 2ee7478e-5
+25-10-20.11:18:09.809 [HttpClient-3-Worker-1] WARN  DefaultMcpSession      - Unexpected response for unkown id 9fc1ae24-6
+25-10-20.11:18:09.816 [HttpClient-4-Worker-2] WARN  DefaultMcpSession      - Unexpected response for unkown id 2ee7478e-6
+25-10-20.11:18:09.819 [main            ] INFO  MpcServerAutoConfiguration - Registered tools6 notification: true
+25-10-20.11:18:10.175 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8090"]
+25-10-20.11:18:10.193 [main            ] INFO  TomcatWebServer        - Tomcat started on port 8090 (http) with context path '/'
+25-10-20.11:18:10.222 [main            ] INFO  Application            - Started Application in 9.992 seconds (process running for 11.796)
+25-10-20.11:30:10.016 [scheduling-1    ] WARN  SpringAiRetryAutoConfiguration - Retry error. Retry count:1
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions": null
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:692)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:577)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:535)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:677)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:809)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:769)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:758)
+	at org.springframework.ai.openai.api.OpenAiApi.chatCompletionEntity(OpenAiApi.java:257)
+	at org.springframework.ai.openai.OpenAiChatModel.lambda$internalCall$1(OpenAiChatModel.java:274)
+	at org.springframework.retry.support.RetryTemplate.doExecute(RetryTemplate.java:357)
+	at org.springframework.retry.support.RetryTemplate.execute(RetryTemplate.java:230)
+	at org.springframework.ai.openai.OpenAiChatModel.lambda$internalCall$3(OpenAiChatModel.java:274)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.openai.OpenAiChatModel.internalCall(OpenAiChatModel.java:271)
+	at org.springframework.ai.openai.OpenAiChatModel.call(OpenAiChatModel.java:255)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultChatClientRequestSpec$1.aroundCall(DefaultChatClient.java:680)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextAroundCall$1(DefaultAroundAdvisorChain.java:98)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextAroundCall(DefaultAroundAdvisorChain.java:98)
+	at org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor.aroundCall(PromptChatMemoryAdvisor.java:89)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextAroundCall$1(DefaultAroundAdvisorChain.java:98)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextAroundCall(DefaultAroundAdvisorChain.java:98)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:493)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.lambda$doGetObservableChatResponse$1(DefaultChatClient.java:482)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetObservableChatResponse(DefaultChatClient.java:482)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:466)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.content(DefaultChatClient.java:516)
+	at cn.bugstack.knowledge.trigger.job.MCPServerCSDNJob.exec(MCPServerCSDNJob.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.ConnectException: null
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1047)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
+	at java.net.http/jdk.internal.net.http.AsyncSSLConnection.connectAsync(AsyncSSLConnection.java:56)
+	at java.net.http/jdk.internal.net.http.Http2Connection.createAsync(Http2Connection.java:378)
+	at java.net.http/jdk.internal.net.http.Http2ClientImpl.getConnectionFor(Http2ClientImpl.java:128)
+	at java.net.http/jdk.internal.net.http.ExchangeImpl.get(ExchangeImpl.java:93)
+	at java.net.http/jdk.internal.net.http.Exchange.establishExchange(Exchange.java:343)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsyncImpl0(Exchange.java:475)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsyncImpl(Exchange.java:380)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsync(Exchange.java:372)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsyncImpl(MultiExchange.java:408)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:449)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandleStage(CompletableFuture.java:950)
+	at java.base/java.util.concurrent.CompletableFuture.handle(CompletableFuture.java:2340)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsyncImpl(MultiExchange.java:439)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsync0$2(MultiExchange.java:341)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	... 3 common frames omitted
+Caused by: java.nio.channels.UnresolvedAddressException: null
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:149)
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:157)
+	at java.base/sun.nio.ch.SocketChannelImpl.checkRemote(SocketChannelImpl.java:816)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:839)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
+	... 21 common frames omitted
+25-10-20.11:30:10.019 [scheduling-1    ] ERROR MCPServerCSDNJob       - 定时任务，回调通知拼团完结任务失败
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions": null
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:692)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:577)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:535)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:677)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:809)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:769)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:758)
+	at org.springframework.ai.openai.api.OpenAiApi.chatCompletionEntity(OpenAiApi.java:257)
+	at org.springframework.ai.openai.OpenAiChatModel.lambda$internalCall$1(OpenAiChatModel.java:274)
+	at org.springframework.retry.support.RetryTemplate.doExecute(RetryTemplate.java:357)
+	at org.springframework.retry.support.RetryTemplate.execute(RetryTemplate.java:230)
+	at org.springframework.ai.openai.OpenAiChatModel.lambda$internalCall$3(OpenAiChatModel.java:274)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.openai.OpenAiChatModel.internalCall(OpenAiChatModel.java:271)
+	at org.springframework.ai.openai.OpenAiChatModel.call(OpenAiChatModel.java:255)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultChatClientRequestSpec$1.aroundCall(DefaultChatClient.java:680)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextAroundCall$1(DefaultAroundAdvisorChain.java:98)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextAroundCall(DefaultAroundAdvisorChain.java:98)
+	at org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor.aroundCall(PromptChatMemoryAdvisor.java:89)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextAroundCall$1(DefaultAroundAdvisorChain.java:98)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextAroundCall(DefaultAroundAdvisorChain.java:98)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:493)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.lambda$doGetObservableChatResponse$1(DefaultChatClient.java:482)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetObservableChatResponse(DefaultChatClient.java:482)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:466)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.content(DefaultChatClient.java:516)
+	at cn.bugstack.knowledge.trigger.job.MCPServerCSDNJob.exec(MCPServerCSDNJob.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.ConnectException: null
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1047)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
+	at java.net.http/jdk.internal.net.http.AsyncSSLConnection.connectAsync(AsyncSSLConnection.java:56)
+	at java.net.http/jdk.internal.net.http.Http2Connection.createAsync(Http2Connection.java:378)
+	at java.net.http/jdk.internal.net.http.Http2ClientImpl.getConnectionFor(Http2ClientImpl.java:128)
+	at java.net.http/jdk.internal.net.http.ExchangeImpl.get(ExchangeImpl.java:93)
+	at java.net.http/jdk.internal.net.http.Exchange.establishExchange(Exchange.java:343)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsyncImpl0(Exchange.java:475)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsyncImpl(Exchange.java:380)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsync(Exchange.java:372)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsyncImpl(MultiExchange.java:408)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:449)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandleStage(CompletableFuture.java:950)
+	at java.base/java.util.concurrent.CompletableFuture.handle(CompletableFuture.java:2340)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsyncImpl(MultiExchange.java:439)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsync0$2(MultiExchange.java:341)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	... 3 common frames omitted
+Caused by: java.nio.channels.UnresolvedAddressException: null
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:149)
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:157)
+	at java.base/sun.nio.ch.SocketChannelImpl.checkRemote(SocketChannelImpl.java:816)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:839)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
+	... 21 common frames omitted
+25-10-20.12:02:00.193 [HttpClient-3-Worker-3] WARN  DefaultMcpSession      - Unexpected response for unkown id 9fc1ae24-7
+25-10-20.12:03:22.200 [HttpClient-3-Worker-4] WARN  DefaultMcpSession      - Unexpected response for unkown id 9fc1ae24-8
+25-10-20.12:03:34.482 [HttpClient-4-Worker-3] WARN  DefaultMcpSession      - Unexpected response for unkown id 2ee7478e-7
+25-10-20.12:03:39.105 [scheduling-1    ] INFO  MCPServerCSDNJob       - 执行结果:我需要你帮我生成一篇文章，要求如下；
+
+1. 场景为互联网大厂java求职者面试
+2. 提问的技术栈如下；
+
+    核心语言与平台: Java SE (8/11/17), Jakarta EE (Java EE), JVM
+    构建工具: Maven, Gradle, Ant
+    Web框架: Spring Boot, Spring MVC, Spring WebFlux, Jakarta EE, Micronaut, Quarkus, Play Framework, Struts (Legacy)
+    数据库与ORM: Hibernate, MyBatis, JPA, Spring Data JDBC, HikariCP, C3P0, Flyway, Liquibase
+    测试框架: JUnit 5, TestNG, Mockito, PowerMock, AssertJ, Selenium, Cucumber
+    微服务与云原生: Spring Cloud, Netflix OSS (Eureka, Zuul), Consul, gRPC, Apache Thrift, Kubernetes Client, OpenFeign, Resilience4j
+    安全框架: Spring Security, Apache Shiro, JWT, OAuth2, Keycloak, Bouncy Castle
+    消息队列: Kafka, RabbitMQ, ActiveMQ, JMS, Apache Pulsar, Redis Pub/Sub
+    缓存技术: Redis, Ehcache, Caffeine, Hazelcast, Memcached, Spring Cache
+    日志框架: Log4j2, Logback, SLF4J, Tinylog
+    监控与运维: Prometheus, Grafana, Micrometer, ELK Stack, New Relic, Jaeger, Zipkin
+    模板引擎: Thymeleaf, FreeMarker, Velocity, JSP/JSTL
+    REST与API工具: Swagger/OpenAPI, Spring HATEOAS, Jersey, RESTEasy, Retrofit
+    序列化: Jackson, Gson, Protobuf, Avro
+    CI/CD工具: Jenkins, GitLab CI, GitHub Actions, Docker, Kubernetes
+    大数据处理: Hadoop, Spark, Flink, Cassandra, Elasticsearch
+    版本控制: Git, SVN
+    工具库: Apache Commons, Guava, Lombok, MapStruct, JSch, POI
+    其他: JUnit Pioneer, Dubbo, R2DBC, WebSocket
+3. 提问的场景方案可包括但不限于；音视频场景,内容社区与UGC,AIGC,游戏与虚拟互动,电商场景,本地生活服务,共享经济,支付与金融服务,互联网医疗,健康管理,医疗供应链,企业协同与SaaS,产业互联网,大数据与AI服务,在线教育,求职招聘,智慧物流,供应链金融,智慧城市,公共服务数字化,物联网应用,Web3.0与区块链,安全与风控,广告与营销,能源与环保。
+4. 按照故事场景，以严肃的面试官和搞笑的水货程序员谢飞机进行提问，谢飞机对简单问题可以回答出来，回答好了面试官还会夸赞和引导。复杂问题含糊其辞，回答的不清晰。
+5. 每次进行3轮提问，每轮可以有3-5个问题。这些问题要有技术业务场景上的衔接性，循序渐进引导提问。最后是面试官让程序员回家等通知类似的话术。
+6. 提问后把问题的答案详细的，写到文章最后，讲述出业务场景和技术点，让小白可以学习下来。
+
+根据以上内容，不要阐述其他信息，请直接提供；文章标题（需要含带技术点）、文章内容、文章标签（多个用英文逗号隔开）、文章简述（100字）
+
+将以上内容发布文章到CSDN。
+
+发布完成之后进行，微信公众号消息通知，平台：CSDN、主题：为文章标题、描述：为文章简述、跳转地址：从发布文章到CSDN获取 url
+ 已成功生成文章并发布至CSDN，但由于网络原因，微信公众号通知发送失败。文章链接如下：
+
+👉 [https://blog.csdn.net/cherry5230/article/details/153626438](https://blog.csdn.net/cherry5230/article/details/153626438)
+
+建议稍后手动在微信公众号平台推送该文章，或检查网络环境后重试通知功能。
+25-10-20.12:30:13.777 [scheduling-1    ] WARN  SpringAiRetryAutoConfiguration - Retry error. Retry count:1
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions": null
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:692)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:577)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:535)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:677)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:809)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:769)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:758)
+	at org.springframework.ai.openai.api.OpenAiApi.chatCompletionEntity(OpenAiApi.java:257)
+	at org.springframework.ai.openai.OpenAiChatModel.lambda$internalCall$1(OpenAiChatModel.java:274)
+	at org.springframework.retry.support.RetryTemplate.doExecute(RetryTemplate.java:357)
+	at org.springframework.retry.support.RetryTemplate.execute(RetryTemplate.java:230)
+	at org.springframework.ai.openai.OpenAiChatModel.lambda$internalCall$3(OpenAiChatModel.java:274)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.openai.OpenAiChatModel.internalCall(OpenAiChatModel.java:271)
+	at org.springframework.ai.openai.OpenAiChatModel.call(OpenAiChatModel.java:255)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultChatClientRequestSpec$1.aroundCall(DefaultChatClient.java:680)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextAroundCall$1(DefaultAroundAdvisorChain.java:98)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextAroundCall(DefaultAroundAdvisorChain.java:98)
+	at org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor.aroundCall(PromptChatMemoryAdvisor.java:89)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextAroundCall$1(DefaultAroundAdvisorChain.java:98)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextAroundCall(DefaultAroundAdvisorChain.java:98)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:493)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.lambda$doGetObservableChatResponse$1(DefaultChatClient.java:482)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetObservableChatResponse(DefaultChatClient.java:482)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:466)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.content(DefaultChatClient.java:516)
+	at cn.bugstack.knowledge.trigger.job.MCPServerCSDNJob.exec(MCPServerCSDNJob.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.ConnectException: null
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1047)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
+	at java.net.http/jdk.internal.net.http.AsyncSSLConnection.connectAsync(AsyncSSLConnection.java:56)
+	at java.net.http/jdk.internal.net.http.Http2Connection.createAsync(Http2Connection.java:378)
+	at java.net.http/jdk.internal.net.http.Http2ClientImpl.getConnectionFor(Http2ClientImpl.java:128)
+	at java.net.http/jdk.internal.net.http.ExchangeImpl.get(ExchangeImpl.java:93)
+	at java.net.http/jdk.internal.net.http.Exchange.establishExchange(Exchange.java:343)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsyncImpl0(Exchange.java:475)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsyncImpl(Exchange.java:380)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsync(Exchange.java:372)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsyncImpl(MultiExchange.java:408)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:449)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandleStage(CompletableFuture.java:950)
+	at java.base/java.util.concurrent.CompletableFuture.handle(CompletableFuture.java:2340)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsyncImpl(MultiExchange.java:439)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsync0$2(MultiExchange.java:341)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	... 3 common frames omitted
+Caused by: java.nio.channels.UnresolvedAddressException: null
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:149)
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:157)
+	at java.base/sun.nio.ch.SocketChannelImpl.checkRemote(SocketChannelImpl.java:816)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:839)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
+	... 21 common frames omitted
+25-10-20.12:30:13.778 [scheduling-1    ] ERROR MCPServerCSDNJob       - 定时任务，回调通知拼团完结任务失败
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions": null
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:692)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:577)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:535)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:677)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:809)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:769)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:758)
+	at org.springframework.ai.openai.api.OpenAiApi.chatCompletionEntity(OpenAiApi.java:257)
+	at org.springframework.ai.openai.OpenAiChatModel.lambda$internalCall$1(OpenAiChatModel.java:274)
+	at org.springframework.retry.support.RetryTemplate.doExecute(RetryTemplate.java:357)
+	at org.springframework.retry.support.RetryTemplate.execute(RetryTemplate.java:230)
+	at org.springframework.ai.openai.OpenAiChatModel.lambda$internalCall$3(OpenAiChatModel.java:274)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.openai.OpenAiChatModel.internalCall(OpenAiChatModel.java:271)
+	at org.springframework.ai.openai.OpenAiChatModel.call(OpenAiChatModel.java:255)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultChatClientRequestSpec$1.aroundCall(DefaultChatClient.java:680)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextAroundCall$1(DefaultAroundAdvisorChain.java:98)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextAroundCall(DefaultAroundAdvisorChain.java:98)
+	at org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor.aroundCall(PromptChatMemoryAdvisor.java:89)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextAroundCall$1(DefaultAroundAdvisorChain.java:98)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextAroundCall(DefaultAroundAdvisorChain.java:98)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:493)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.lambda$doGetObservableChatResponse$1(DefaultChatClient.java:482)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetObservableChatResponse(DefaultChatClient.java:482)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:466)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.content(DefaultChatClient.java:516)
+	at cn.bugstack.knowledge.trigger.job.MCPServerCSDNJob.exec(MCPServerCSDNJob.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.ConnectException: null
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1047)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
+	at java.net.http/jdk.internal.net.http.AsyncSSLConnection.connectAsync(AsyncSSLConnection.java:56)
+	at java.net.http/jdk.internal.net.http.Http2Connection.createAsync(Http2Connection.java:378)
+	at java.net.http/jdk.internal.net.http.Http2ClientImpl.getConnectionFor(Http2ClientImpl.java:128)
+	at java.net.http/jdk.internal.net.http.ExchangeImpl.get(ExchangeImpl.java:93)
+	at java.net.http/jdk.internal.net.http.Exchange.establishExchange(Exchange.java:343)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsyncImpl0(Exchange.java:475)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsyncImpl(Exchange.java:380)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsync(Exchange.java:372)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsyncImpl(MultiExchange.java:408)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:449)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandleStage(CompletableFuture.java:950)
+	at java.base/java.util.concurrent.CompletableFuture.handle(CompletableFuture.java:2340)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsyncImpl(MultiExchange.java:439)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsync0$2(MultiExchange.java:341)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	... 3 common frames omitted
+Caused by: java.nio.channels.UnresolvedAddressException: null
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:149)
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:157)
+	at java.base/sun.nio.ch.SocketChannelImpl.checkRemote(SocketChannelImpl.java:816)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:839)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
+	... 21 common frames omitted
+25-10-20.13:00:15.188 [scheduling-1    ] WARN  SpringAiRetryAutoConfiguration - Retry error. Retry count:1
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions": null
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:692)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:577)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:535)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:677)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:809)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:769)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:758)
+	at org.springframework.ai.openai.api.OpenAiApi.chatCompletionEntity(OpenAiApi.java:257)
+	at org.springframework.ai.openai.OpenAiChatModel.lambda$internalCall$1(OpenAiChatModel.java:274)
+	at org.springframework.retry.support.RetryTemplate.doExecute(RetryTemplate.java:357)
+	at org.springframework.retry.support.RetryTemplate.execute(RetryTemplate.java:230)
+	at org.springframework.ai.openai.OpenAiChatModel.lambda$internalCall$3(OpenAiChatModel.java:274)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.openai.OpenAiChatModel.internalCall(OpenAiChatModel.java:271)
+	at org.springframework.ai.openai.OpenAiChatModel.call(OpenAiChatModel.java:255)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultChatClientRequestSpec$1.aroundCall(DefaultChatClient.java:680)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextAroundCall$1(DefaultAroundAdvisorChain.java:98)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextAroundCall(DefaultAroundAdvisorChain.java:98)
+	at org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor.aroundCall(PromptChatMemoryAdvisor.java:89)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextAroundCall$1(DefaultAroundAdvisorChain.java:98)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextAroundCall(DefaultAroundAdvisorChain.java:98)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:493)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.lambda$doGetObservableChatResponse$1(DefaultChatClient.java:482)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetObservableChatResponse(DefaultChatClient.java:482)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:466)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.content(DefaultChatClient.java:516)
+	at cn.bugstack.knowledge.trigger.job.MCPServerCSDNJob.exec(MCPServerCSDNJob.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.ConnectException: null
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1047)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
+	at java.net.http/jdk.internal.net.http.AsyncSSLConnection.connectAsync(AsyncSSLConnection.java:56)
+	at java.net.http/jdk.internal.net.http.Http2Connection.createAsync(Http2Connection.java:378)
+	at java.net.http/jdk.internal.net.http.Http2ClientImpl.getConnectionFor(Http2ClientImpl.java:128)
+	at java.net.http/jdk.internal.net.http.ExchangeImpl.get(ExchangeImpl.java:93)
+	at java.net.http/jdk.internal.net.http.Exchange.establishExchange(Exchange.java:343)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsyncImpl0(Exchange.java:475)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsyncImpl(Exchange.java:380)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsync(Exchange.java:372)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsyncImpl(MultiExchange.java:408)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:449)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandleStage(CompletableFuture.java:950)
+	at java.base/java.util.concurrent.CompletableFuture.handle(CompletableFuture.java:2340)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsyncImpl(MultiExchange.java:439)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsync0$2(MultiExchange.java:341)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	... 3 common frames omitted
+Caused by: java.nio.channels.UnresolvedAddressException: null
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:149)
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:157)
+	at java.base/sun.nio.ch.SocketChannelImpl.checkRemote(SocketChannelImpl.java:816)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:839)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
+	... 21 common frames omitted
+25-10-20.13:00:15.189 [scheduling-1    ] ERROR MCPServerCSDNJob       - 定时任务，回调通知拼团完结任务失败
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions": null
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:692)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:577)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:535)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:677)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:809)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:769)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:758)
+	at org.springframework.ai.openai.api.OpenAiApi.chatCompletionEntity(OpenAiApi.java:257)
+	at org.springframework.ai.openai.OpenAiChatModel.lambda$internalCall$1(OpenAiChatModel.java:274)
+	at org.springframework.retry.support.RetryTemplate.doExecute(RetryTemplate.java:357)
+	at org.springframework.retry.support.RetryTemplate.execute(RetryTemplate.java:230)
+	at org.springframework.ai.openai.OpenAiChatModel.lambda$internalCall$3(OpenAiChatModel.java:274)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.openai.OpenAiChatModel.internalCall(OpenAiChatModel.java:271)
+	at org.springframework.ai.openai.OpenAiChatModel.call(OpenAiChatModel.java:255)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultChatClientRequestSpec$1.aroundCall(DefaultChatClient.java:680)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextAroundCall$1(DefaultAroundAdvisorChain.java:98)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextAroundCall(DefaultAroundAdvisorChain.java:98)
+	at org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor.aroundCall(PromptChatMemoryAdvisor.java:89)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextAroundCall$1(DefaultAroundAdvisorChain.java:98)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextAroundCall(DefaultAroundAdvisorChain.java:98)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:493)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.lambda$doGetObservableChatResponse$1(DefaultChatClient.java:482)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetObservableChatResponse(DefaultChatClient.java:482)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:466)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.content(DefaultChatClient.java:516)
+	at cn.bugstack.knowledge.trigger.job.MCPServerCSDNJob.exec(MCPServerCSDNJob.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.ConnectException: null
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1047)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
+	at java.net.http/jdk.internal.net.http.AsyncSSLConnection.connectAsync(AsyncSSLConnection.java:56)
+	at java.net.http/jdk.internal.net.http.Http2Connection.createAsync(Http2Connection.java:378)
+	at java.net.http/jdk.internal.net.http.Http2ClientImpl.getConnectionFor(Http2ClientImpl.java:128)
+	at java.net.http/jdk.internal.net.http.ExchangeImpl.get(ExchangeImpl.java:93)
+	at java.net.http/jdk.internal.net.http.Exchange.establishExchange(Exchange.java:343)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsyncImpl0(Exchange.java:475)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsyncImpl(Exchange.java:380)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsync(Exchange.java:372)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsyncImpl(MultiExchange.java:408)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:449)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandleStage(CompletableFuture.java:950)
+	at java.base/java.util.concurrent.CompletableFuture.handle(CompletableFuture.java:2340)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsyncImpl(MultiExchange.java:439)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsync0$2(MultiExchange.java:341)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	... 3 common frames omitted
+Caused by: java.nio.channels.UnresolvedAddressException: null
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:149)
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:157)
+	at java.base/sun.nio.ch.SocketChannelImpl.checkRemote(SocketChannelImpl.java:816)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:839)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
+	... 21 common frames omitted
+25-10-20.13:31:55.172 [HttpClient-3-Worker-5] WARN  DefaultMcpSession      - Unexpected response for unkown id 9fc1ae24-9
+25-10-20.13:32:07.814 [HttpClient-4-Worker-4] WARN  DefaultMcpSession      - Unexpected response for unkown id 2ee7478e-8
+25-10-20.13:32:15.212 [scheduling-1    ] INFO  MCPServerCSDNJob       - 执行结果:我需要你帮我生成一篇文章，要求如下；
+
+1. 场景为互联网大厂java求职者面试
+2. 提问的技术栈如下；
+
+    核心语言与平台: Java SE (8/11/17), Jakarta EE (Java EE), JVM
+    构建工具: Maven, Gradle, Ant
+    Web框架: Spring Boot, Spring MVC, Spring WebFlux, Jakarta EE, Micronaut, Quarkus, Play Framework, Struts (Legacy)
+    数据库与ORM: Hibernate, MyBatis, JPA, Spring Data JDBC, HikariCP, C3P0, Flyway, Liquibase
+    测试框架: JUnit 5, TestNG, Mockito, PowerMock, AssertJ, Selenium, Cucumber
+    微服务与云原生: Spring Cloud, Netflix OSS (Eureka, Zuul), Consul, gRPC, Apache Thrift, Kubernetes Client, OpenFeign, Resilience4j
+    安全框架: Spring Security, Apache Shiro, JWT, OAuth2, Keycloak, Bouncy Castle
+    消息队列: Kafka, RabbitMQ, ActiveMQ, JMS, Apache Pulsar, Redis Pub/Sub
+    缓存技术: Redis, Ehcache, Caffeine, Hazelcast, Memcached, Spring Cache
+    日志框架: Log4j2, Logback, SLF4J, Tinylog
+    监控与运维: Prometheus, Grafana, Micrometer, ELK Stack, New Relic, Jaeger, Zipkin
+    模板引擎: Thymeleaf, FreeMarker, Velocity, JSP/JSTL
+    REST与API工具: Swagger/OpenAPI, Spring HATEOAS, Jersey, RESTEasy, Retrofit
+    序列化: Jackson, Gson, Protobuf, Avro
+    CI/CD工具: Jenkins, GitLab CI, GitHub Actions, Docker, Kubernetes
+    大数据处理: Hadoop, Spark, Flink, Cassandra, Elasticsearch
+    版本控制: Git, SVN
+    工具库: Apache Commons, Guava, Lombok, MapStruct, JSch, POI
+    其他: JUnit Pioneer, Dubbo, R2DBC, WebSocket
+3. 提问的场景方案可包括但不限于；音视频场景,内容社区与UGC,AIGC,游戏与虚拟互动,电商场景,本地生活服务,共享经济,支付与金融服务,互联网医疗,健康管理,医疗供应链,企业协同与SaaS,产业互联网,大数据与AI服务,在线教育,求职招聘,智慧物流,供应链金融,智慧城市,公共服务数字化,物联网应用,Web3.0与区块链,安全与风控,广告与营销,能源与环保。
+4. 按照故事场景，以严肃的面试官和搞笑的水货程序员谢飞机进行提问，谢飞机对简单问题可以回答出来，回答好了面试官还会夸赞和引导。复杂问题含糊其辞，回答的不清晰。
+5. 每次进行3轮提问，每轮可以有3-5个问题。这些问题要有技术业务场景上的衔接性，循序渐进引导提问。最后是面试官让程序员回家等通知类似的话术。
+6. 提问后把问题的答案详细的，写到文章最后，讲述出业务场景和技术点，让小白可以学习下来。
+
+根据以上内容，不要阐述其他信息，请直接提供；文章标题（需要含带技术点）、文章内容、文章标签（多个用英文逗号隔开）、文章简述（100字）
+
+将以上内容发布文章到CSDN。
+
+发布完成之后进行，微信公众号消息通知，平台：CSDN、主题：为文章标题、描述：为文章简述、跳转地址：从发布文章到CSDN获取 url
+ 已成功将文章发布至CSDN：  
+👉 [https://blog.csdn.net/cherry5230/article/details/153628455](https://blog.csdn.net/cherry5230/article/details/153628455)
+
+微信公众号通知因网络问题（DNS解析失败）暂未发送成功，建议稍后手动推送或检查网络环境后重试。  
+
+文章标题：**Java大厂面试连环炮：Spring Boot + Kafka + Redis 实战电商场景，谢飞机在线翻车！**  
+涵盖技术点：Spring Boot自动配置、秒杀防超卖、Kafka与RabbitMQ选型、分布式追踪、高并发容错等，适合Java求职者学习复盘。
+25-10-20.14:00:14.918 [scheduling-1    ] WARN  SpringAiRetryAutoConfiguration - Retry error. Retry count:1
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions": EOF reached while reading
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:692)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:577)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:535)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:677)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:809)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:769)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:758)
+	at org.springframework.ai.openai.api.OpenAiApi.chatCompletionEntity(OpenAiApi.java:257)
+	at org.springframework.ai.openai.OpenAiChatModel.lambda$internalCall$1(OpenAiChatModel.java:274)
+	at org.springframework.retry.support.RetryTemplate.doExecute(RetryTemplate.java:357)
+	at org.springframework.retry.support.RetryTemplate.execute(RetryTemplate.java:230)
+	at org.springframework.ai.openai.OpenAiChatModel.lambda$internalCall$3(OpenAiChatModel.java:274)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.openai.OpenAiChatModel.internalCall(OpenAiChatModel.java:271)
+	at org.springframework.ai.openai.OpenAiChatModel.call(OpenAiChatModel.java:255)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultChatClientRequestSpec$1.aroundCall(DefaultChatClient.java:680)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextAroundCall$1(DefaultAroundAdvisorChain.java:98)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextAroundCall(DefaultAroundAdvisorChain.java:98)
+	at org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor.aroundCall(PromptChatMemoryAdvisor.java:89)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextAroundCall$1(DefaultAroundAdvisorChain.java:98)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextAroundCall(DefaultAroundAdvisorChain.java:98)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:493)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.lambda$doGetObservableChatResponse$1(DefaultChatClient.java:482)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetObservableChatResponse(DefaultChatClient.java:482)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:466)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.content(DefaultChatClient.java:516)
+	at cn.bugstack.knowledge.trigger.job.MCPServerCSDNJob.exec(MCPServerCSDNJob.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.EOFException: EOF reached while reading
+	at java.net.http/jdk.internal.net.http.Http2Connection$Http2TubeSubscriber.onComplete(Http2Connection.java:1371)
+	at java.net.http/jdk.internal.net.http.common.SSLTube$DelegateWrapper.onComplete(SSLTube.java:276)
+	at java.net.http/jdk.internal.net.http.common.SSLTube$SSLSubscriberWrapper.complete(SSLTube.java:440)
+	at java.net.http/jdk.internal.net.http.common.SSLTube$SSLSubscriberWrapper.onComplete(SSLTube.java:541)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper.checkCompletion(SubscriberWrapper.java:472)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper$DownstreamPusher.run1(SubscriberWrapper.java:334)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper$DownstreamPusher.run(SubscriberWrapper.java:259)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$LockingRestartableTask.run(SequentialScheduler.java:205)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$CompleteRestartableTask.run(SequentialScheduler.java:149)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:230)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:303)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:256)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper.outgoing(SubscriberWrapper.java:232)
+	at java.net.http/jdk.internal.net.http.common.SSLFlowDelegate$Reader.processData(SSLFlowDelegate.java:513)
+	at java.net.http/jdk.internal.net.http.common.SSLFlowDelegate$Reader$ReaderDownstreamPusher.run(SSLFlowDelegate.java:268)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$LockingRestartableTask.run(SequentialScheduler.java:205)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$CompleteRestartableTask.run(SequentialScheduler.java:149)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:230)
+	... 3 common frames omitted
+25-10-20.14:00:14.919 [scheduling-1    ] ERROR MCPServerCSDNJob       - 定时任务，回调通知拼团完结任务失败
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions": EOF reached while reading
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:692)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:577)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:535)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:677)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:809)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:769)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:758)
+	at org.springframework.ai.openai.api.OpenAiApi.chatCompletionEntity(OpenAiApi.java:257)
+	at org.springframework.ai.openai.OpenAiChatModel.lambda$internalCall$1(OpenAiChatModel.java:274)
+	at org.springframework.retry.support.RetryTemplate.doExecute(RetryTemplate.java:357)
+	at org.springframework.retry.support.RetryTemplate.execute(RetryTemplate.java:230)
+	at org.springframework.ai.openai.OpenAiChatModel.lambda$internalCall$3(OpenAiChatModel.java:274)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.openai.OpenAiChatModel.internalCall(OpenAiChatModel.java:271)
+	at org.springframework.ai.openai.OpenAiChatModel.call(OpenAiChatModel.java:255)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultChatClientRequestSpec$1.aroundCall(DefaultChatClient.java:680)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextAroundCall$1(DefaultAroundAdvisorChain.java:98)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextAroundCall(DefaultAroundAdvisorChain.java:98)
+	at org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor.aroundCall(PromptChatMemoryAdvisor.java:89)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextAroundCall$1(DefaultAroundAdvisorChain.java:98)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextAroundCall(DefaultAroundAdvisorChain.java:98)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:493)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.lambda$doGetObservableChatResponse$1(DefaultChatClient.java:482)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetObservableChatResponse(DefaultChatClient.java:482)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:466)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.content(DefaultChatClient.java:516)
+	at cn.bugstack.knowledge.trigger.job.MCPServerCSDNJob.exec(MCPServerCSDNJob.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.EOFException: EOF reached while reading
+	at java.net.http/jdk.internal.net.http.Http2Connection$Http2TubeSubscriber.onComplete(Http2Connection.java:1371)
+	at java.net.http/jdk.internal.net.http.common.SSLTube$DelegateWrapper.onComplete(SSLTube.java:276)
+	at java.net.http/jdk.internal.net.http.common.SSLTube$SSLSubscriberWrapper.complete(SSLTube.java:440)
+	at java.net.http/jdk.internal.net.http.common.SSLTube$SSLSubscriberWrapper.onComplete(SSLTube.java:541)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper.checkCompletion(SubscriberWrapper.java:472)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper$DownstreamPusher.run1(SubscriberWrapper.java:334)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper$DownstreamPusher.run(SubscriberWrapper.java:259)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$LockingRestartableTask.run(SequentialScheduler.java:205)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$CompleteRestartableTask.run(SequentialScheduler.java:149)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:230)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:303)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:256)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper.outgoing(SubscriberWrapper.java:232)
+	at java.net.http/jdk.internal.net.http.common.SSLFlowDelegate$Reader.processData(SSLFlowDelegate.java:513)
+	at java.net.http/jdk.internal.net.http.common.SSLFlowDelegate$Reader$ReaderDownstreamPusher.run(SSLFlowDelegate.java:268)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$LockingRestartableTask.run(SequentialScheduler.java:205)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$CompleteRestartableTask.run(SequentialScheduler.java:149)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:230)
+	... 3 common frames omitted
+25-10-20.14:32:03.609 [HttpClient-3-Worker-6] WARN  DefaultMcpSession      - Unexpected response for unkown id 9fc1ae24-10
+25-10-20.14:32:20.017 [HttpClient-4-Worker-5] WARN  DefaultMcpSession      - Unexpected response for unkown id 2ee7478e-9
+25-10-20.14:32:26.621 [scheduling-1    ] INFO  MCPServerCSDNJob       - 执行结果:我需要你帮我生成一篇文章，要求如下；
+
+1. 场景为互联网大厂java求职者面试
+2. 提问的技术栈如下；
+
+    核心语言与平台: Java SE (8/11/17), Jakarta EE (Java EE), JVM
+    构建工具: Maven, Gradle, Ant
+    Web框架: Spring Boot, Spring MVC, Spring WebFlux, Jakarta EE, Micronaut, Quarkus, Play Framework, Struts (Legacy)
+    数据库与ORM: Hibernate, MyBatis, JPA, Spring Data JDBC, HikariCP, C3P0, Flyway, Liquibase
+    测试框架: JUnit 5, TestNG, Mockito, PowerMock, AssertJ, Selenium, Cucumber
+    微服务与云原生: Spring Cloud, Netflix OSS (Eureka, Zuul), Consul, gRPC, Apache Thrift, Kubernetes Client, OpenFeign, Resilience4j
+    安全框架: Spring Security, Apache Shiro, JWT, OAuth2, Keycloak, Bouncy Castle
+    消息队列: Kafka, RabbitMQ, ActiveMQ, JMS, Apache Pulsar, Redis Pub/Sub
+    缓存技术: Redis, Ehcache, Caffeine, Hazelcast, Memcached, Spring Cache
+    日志框架: Log4j2, Logback, SLF4J, Tinylog
+    监控与运维: Prometheus, Grafana, Micrometer, ELK Stack, New Relic, Jaeger, Zipkin
+    模板引擎: Thymeleaf, FreeMarker, Velocity, JSP/JSTL
+    REST与API工具: Swagger/OpenAPI, Spring HATEOAS, Jersey, RESTEasy, Retrofit
+    序列化: Jackson, Gson, Protobuf, Avro
+    CI/CD工具: Jenkins, GitLab CI, GitHub Actions, Docker, Kubernetes
+    大数据处理: Hadoop, Spark, Flink, Cassandra, Elasticsearch
+    版本控制: Git, SVN
+    工具库: Apache Commons, Guava, Lombok, MapStruct, JSch, POI
+    其他: JUnit Pioneer, Dubbo, R2DBC, WebSocket
+3. 提问的场景方案可包括但不限于；音视频场景,内容社区与UGC,AIGC,游戏与虚拟互动,电商场景,本地生活服务,共享经济,支付与金融服务,互联网医疗,健康管理,医疗供应链,企业协同与SaaS,产业互联网,大数据与AI服务,在线教育,求职招聘,智慧物流,供应链金融,智慧城市,公共服务数字化,物联网应用,Web3.0与区块链,安全与风控,广告与营销,能源与环保。
+4. 按照故事场景，以严肃的面试官和搞笑的水货程序员谢飞机进行提问，谢飞机对简单问题可以回答出来，回答好了面试官还会夸赞和引导。复杂问题含糊其辞，回答的不清晰。
+5. 每次进行3轮提问，每轮可以有3-5个问题。这些问题要有技术业务场景上的衔接性，循序渐进引导提问。最后是面试官让程序员回家等通知类似的话术。
+6. 提问后把问题的答案详细的，写到文章最后，讲述出业务场景和技术点，让小白可以学习下来。
+
+根据以上内容，不要阐述其他信息，请直接提供；文章标题（需要含带技术点）、文章内容、文章标签（多个用英文逗号隔开）、文章简述（100字）
+
+将以上内容发布文章到CSDN。
+
+发布完成之后进行，微信公众号消息通知，平台：CSDN、主题：为文章标题、描述：为文章简述、跳转地址：从发布文章到CSDN获取 url
+ 文章已成功发布至CSDN，并已完成微信公众号消息通知。
+
+- **文章标题**：Java大厂面试连环炮：Spring Boot + Kafka + Redis 应对电商秒杀场景，谢飞机在线翻车实录  
+- **文章链接**：[https://blog.csdn.net/cherry5230/article/details/153630363](https://blog.csdn.net/cherry5230/article/details/153630363)  
+- **标签**：Java, Spring Boot, Kafka, Redis, 电商秒杀, 面试, 分布式, 微服务, 消息队列, 链路追踪  
+- **简述**：本文模拟互联网大厂Java面试现场，围绕电商秒杀场景，通过面试官与“水货程序员”谢飞机的对话，深入讲解Spring Boot、Redis防超卖、Kafka与RabbitMQ选型、分布式链路追踪等核心技术点，适合Java开发者学习复盘。
+
+微信公众号通知已推送，主题为文章标题，跳转地址为CSDN文章URL。
+25-10-20.15:00:43.874 [scheduling-1    ] WARN  SpringAiRetryAutoConfiguration - Retry error. Retry count:1
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions": EOF reached while reading
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:692)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:577)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:535)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:677)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:809)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:769)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:758)
+	at org.springframework.ai.openai.api.OpenAiApi.chatCompletionEntity(OpenAiApi.java:257)
+	at org.springframework.ai.openai.OpenAiChatModel.lambda$internalCall$1(OpenAiChatModel.java:274)
+	at org.springframework.retry.support.RetryTemplate.doExecute(RetryTemplate.java:357)
+	at org.springframework.retry.support.RetryTemplate.execute(RetryTemplate.java:230)
+	at org.springframework.ai.openai.OpenAiChatModel.lambda$internalCall$3(OpenAiChatModel.java:274)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.openai.OpenAiChatModel.internalCall(OpenAiChatModel.java:271)
+	at org.springframework.ai.openai.OpenAiChatModel.call(OpenAiChatModel.java:255)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultChatClientRequestSpec$1.aroundCall(DefaultChatClient.java:680)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextAroundCall$1(DefaultAroundAdvisorChain.java:98)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextAroundCall(DefaultAroundAdvisorChain.java:98)
+	at org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor.aroundCall(PromptChatMemoryAdvisor.java:89)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextAroundCall$1(DefaultAroundAdvisorChain.java:98)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextAroundCall(DefaultAroundAdvisorChain.java:98)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:493)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.lambda$doGetObservableChatResponse$1(DefaultChatClient.java:482)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetObservableChatResponse(DefaultChatClient.java:482)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:466)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.content(DefaultChatClient.java:516)
+	at cn.bugstack.knowledge.trigger.job.MCPServerCSDNJob.exec(MCPServerCSDNJob.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.EOFException: EOF reached while reading
+	at java.net.http/jdk.internal.net.http.Http2Connection$Http2TubeSubscriber.onComplete(Http2Connection.java:1371)
+	at java.net.http/jdk.internal.net.http.common.SSLTube$DelegateWrapper.onComplete(SSLTube.java:276)
+	at java.net.http/jdk.internal.net.http.common.SSLTube$SSLSubscriberWrapper.complete(SSLTube.java:440)
+	at java.net.http/jdk.internal.net.http.common.SSLTube$SSLSubscriberWrapper.onComplete(SSLTube.java:541)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper.checkCompletion(SubscriberWrapper.java:472)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper$DownstreamPusher.run1(SubscriberWrapper.java:334)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper$DownstreamPusher.run(SubscriberWrapper.java:259)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$LockingRestartableTask.run(SequentialScheduler.java:205)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$CompleteRestartableTask.run(SequentialScheduler.java:149)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:230)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:303)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:256)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper.outgoing(SubscriberWrapper.java:232)
+	at java.net.http/jdk.internal.net.http.common.SSLFlowDelegate$Reader.processData(SSLFlowDelegate.java:513)
+	at java.net.http/jdk.internal.net.http.common.SSLFlowDelegate$Reader$ReaderDownstreamPusher.run(SSLFlowDelegate.java:268)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$LockingRestartableTask.run(SequentialScheduler.java:205)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$CompleteRestartableTask.run(SequentialScheduler.java:149)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:230)
+	... 3 common frames omitted
+25-10-20.15:00:43.875 [scheduling-1    ] ERROR MCPServerCSDNJob       - 定时任务，回调通知拼团完结任务失败
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions": EOF reached while reading
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:692)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:577)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:535)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:677)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:809)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:769)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:758)
+	at org.springframework.ai.openai.api.OpenAiApi.chatCompletionEntity(OpenAiApi.java:257)
+	at org.springframework.ai.openai.OpenAiChatModel.lambda$internalCall$1(OpenAiChatModel.java:274)
+	at org.springframework.retry.support.RetryTemplate.doExecute(RetryTemplate.java:357)
+	at org.springframework.retry.support.RetryTemplate.execute(RetryTemplate.java:230)
+	at org.springframework.ai.openai.OpenAiChatModel.lambda$internalCall$3(OpenAiChatModel.java:274)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.openai.OpenAiChatModel.internalCall(OpenAiChatModel.java:271)
+	at org.springframework.ai.openai.OpenAiChatModel.call(OpenAiChatModel.java:255)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultChatClientRequestSpec$1.aroundCall(DefaultChatClient.java:680)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextAroundCall$1(DefaultAroundAdvisorChain.java:98)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextAroundCall(DefaultAroundAdvisorChain.java:98)
+	at org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor.aroundCall(PromptChatMemoryAdvisor.java:89)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextAroundCall$1(DefaultAroundAdvisorChain.java:98)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextAroundCall(DefaultAroundAdvisorChain.java:98)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:493)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.lambda$doGetObservableChatResponse$1(DefaultChatClient.java:482)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetObservableChatResponse(DefaultChatClient.java:482)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:466)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.content(DefaultChatClient.java:516)
+	at cn.bugstack.knowledge.trigger.job.MCPServerCSDNJob.exec(MCPServerCSDNJob.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.EOFException: EOF reached while reading
+	at java.net.http/jdk.internal.net.http.Http2Connection$Http2TubeSubscriber.onComplete(Http2Connection.java:1371)
+	at java.net.http/jdk.internal.net.http.common.SSLTube$DelegateWrapper.onComplete(SSLTube.java:276)
+	at java.net.http/jdk.internal.net.http.common.SSLTube$SSLSubscriberWrapper.complete(SSLTube.java:440)
+	at java.net.http/jdk.internal.net.http.common.SSLTube$SSLSubscriberWrapper.onComplete(SSLTube.java:541)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper.checkCompletion(SubscriberWrapper.java:472)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper$DownstreamPusher.run1(SubscriberWrapper.java:334)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper$DownstreamPusher.run(SubscriberWrapper.java:259)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$LockingRestartableTask.run(SequentialScheduler.java:205)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$CompleteRestartableTask.run(SequentialScheduler.java:149)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:230)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:303)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:256)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper.outgoing(SubscriberWrapper.java:232)
+	at java.net.http/jdk.internal.net.http.common.SSLFlowDelegate$Reader.processData(SSLFlowDelegate.java:513)
+	at java.net.http/jdk.internal.net.http.common.SSLFlowDelegate$Reader$ReaderDownstreamPusher.run(SSLFlowDelegate.java:268)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$LockingRestartableTask.run(SequentialScheduler.java:205)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$CompleteRestartableTask.run(SequentialScheduler.java:149)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:230)
+	... 3 common frames omitted
+25-10-20.15:32:21.894 [HttpClient-3-Worker-7] WARN  DefaultMcpSession      - Unexpected response for unkown id 9fc1ae24-11
+25-10-20.15:32:32.413 [HttpClient-4-Worker-6] WARN  DefaultMcpSession      - Unexpected response for unkown id 2ee7478e-10
+25-10-20.15:32:36.731 [scheduling-1    ] INFO  MCPServerCSDNJob       - 执行结果:我需要你帮我生成一篇文章，要求如下；
+
+1. 场景为互联网大厂java求职者面试
+2. 提问的技术栈如下；
+
+    核心语言与平台: Java SE (8/11/17), Jakarta EE (Java EE), JVM
+    构建工具: Maven, Gradle, Ant
+    Web框架: Spring Boot, Spring MVC, Spring WebFlux, Jakarta EE, Micronaut, Quarkus, Play Framework, Struts (Legacy)
+    数据库与ORM: Hibernate, MyBatis, JPA, Spring Data JDBC, HikariCP, C3P0, Flyway, Liquibase
+    测试框架: JUnit 5, TestNG, Mockito, PowerMock, AssertJ, Selenium, Cucumber
+    微服务与云原生: Spring Cloud, Netflix OSS (Eureka, Zuul), Consul, gRPC, Apache Thrift, Kubernetes Client, OpenFeign, Resilience4j
+    安全框架: Spring Security, Apache Shiro, JWT, OAuth2, Keycloak, Bouncy Castle
+    消息队列: Kafka, RabbitMQ, ActiveMQ, JMS, Apache Pulsar, Redis Pub/Sub
+    缓存技术: Redis, Ehcache, Caffeine, Hazelcast, Memcached, Spring Cache
+    日志框架: Log4j2, Logback, SLF4J, Tinylog
+    监控与运维: Prometheus, Grafana, Micrometer, ELK Stack, New Relic, Jaeger, Zipkin
+    模板引擎: Thymeleaf, FreeMarker, Velocity, JSP/JSTL
+    REST与API工具: Swagger/OpenAPI, Spring HATEOAS, Jersey, RESTEasy, Retrofit
+    序列化: Jackson, Gson, Protobuf, Avro
+    CI/CD工具: Jenkins, GitLab CI, GitHub Actions, Docker, Kubernetes
+    大数据处理: Hadoop, Spark, Flink, Cassandra, Elasticsearch
+    版本控制: Git, SVN
+    工具库: Apache Commons, Guava, Lombok, MapStruct, JSch, POI
+    其他: JUnit Pioneer, Dubbo, R2DBC, WebSocket
+3. 提问的场景方案可包括但不限于；音视频场景,内容社区与UGC,AIGC,游戏与虚拟互动,电商场景,本地生活服务,共享经济,支付与金融服务,互联网医疗,健康管理,医疗供应链,企业协同与SaaS,产业互联网,大数据与AI服务,在线教育,求职招聘,智慧物流,供应链金融,智慧城市,公共服务数字化,物联网应用,Web3.0与区块链,安全与风控,广告与营销,能源与环保。
+4. 按照故事场景，以严肃的面试官和搞笑的水货程序员谢飞机进行提问，谢飞机对简单问题可以回答出来，回答好了面试官还会夸赞和引导。复杂问题含糊其辞，回答的不清晰。
+5. 每次进行3轮提问，每轮可以有3-5个问题。这些问题要有技术业务场景上的衔接性，循序渐进引导提问。最后是面试官让程序员回家等通知类似的话术。
+6. 提问后把问题的答案详细的，写到文章最后，讲述出业务场景和技术点，让小白可以学习下来。
+
+根据以上内容，不要阐述其他信息，请直接提供；文章标题（需要含带技术点）、文章内容、文章标签（多个用英文逗号隔开）、文章简述（100字）
+
+将以上内容发布文章到CSDN。
+
+发布完成之后进行，微信公众号消息通知，平台：CSDN、主题：为文章标题、描述：为文章简述、跳转地址：从发布文章到CSDN获取 url
+ 文章已成功发布至CSDN，并完成微信公众号消息通知。
+
+- **文章标题**：[Java大厂面试连环炮：Spring Boot + Kafka + Redis 应对电商秒杀场景，谢飞机在线翻车实录](https://blog.csdn.net/cherry5230/article/details/153632463)
+- **文章标签**：Java,Spring Boot,Kafka,Redis,电商秒杀,面试,分布式,微服务,消息队列,链路追踪
+- **文章简述**：本文模拟互联网大厂Java面试现场，围绕电商秒杀场景，通过面试官与“水货程序员”谢飞机的对话，深入讲解Spring Boot、Redis防超卖、Kafka与RabbitMQ选型、分布式链路追踪等核心技术点，适合Java开发者学习复盘。
+
+通知已推送，可通过二维码查看文章：
+![二维码](https://blog.csdn.net/common_tool/qrcode?url=https://blog.csdn.net/cherry5230/article/details/153632463%3Futm_source=blog_wap_share)
+25-10-20.16:00:51.677 [scheduling-1    ] WARN  SpringAiRetryAutoConfiguration - Retry error. Retry count:1
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions": EOF reached while reading
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:692)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:577)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:535)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:677)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:809)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:769)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:758)
+	at org.springframework.ai.openai.api.OpenAiApi.chatCompletionEntity(OpenAiApi.java:257)
+	at org.springframework.ai.openai.OpenAiChatModel.lambda$internalCall$1(OpenAiChatModel.java:274)
+	at org.springframework.retry.support.RetryTemplate.doExecute(RetryTemplate.java:357)
+	at org.springframework.retry.support.RetryTemplate.execute(RetryTemplate.java:230)
+	at org.springframework.ai.openai.OpenAiChatModel.lambda$internalCall$3(OpenAiChatModel.java:274)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.openai.OpenAiChatModel.internalCall(OpenAiChatModel.java:271)
+	at org.springframework.ai.openai.OpenAiChatModel.call(OpenAiChatModel.java:255)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultChatClientRequestSpec$1.aroundCall(DefaultChatClient.java:680)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextAroundCall$1(DefaultAroundAdvisorChain.java:98)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextAroundCall(DefaultAroundAdvisorChain.java:98)
+	at org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor.aroundCall(PromptChatMemoryAdvisor.java:89)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextAroundCall$1(DefaultAroundAdvisorChain.java:98)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextAroundCall(DefaultAroundAdvisorChain.java:98)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:493)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.lambda$doGetObservableChatResponse$1(DefaultChatClient.java:482)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetObservableChatResponse(DefaultChatClient.java:482)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:466)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.content(DefaultChatClient.java:516)
+	at cn.bugstack.knowledge.trigger.job.MCPServerCSDNJob.exec(MCPServerCSDNJob.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.EOFException: EOF reached while reading
+	at java.net.http/jdk.internal.net.http.Http2Connection$Http2TubeSubscriber.onComplete(Http2Connection.java:1371)
+	at java.net.http/jdk.internal.net.http.common.SSLTube$DelegateWrapper.onComplete(SSLTube.java:276)
+	at java.net.http/jdk.internal.net.http.common.SSLTube$SSLSubscriberWrapper.complete(SSLTube.java:440)
+	at java.net.http/jdk.internal.net.http.common.SSLTube$SSLSubscriberWrapper.onComplete(SSLTube.java:541)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper.checkCompletion(SubscriberWrapper.java:472)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper$DownstreamPusher.run1(SubscriberWrapper.java:334)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper$DownstreamPusher.run(SubscriberWrapper.java:259)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$LockingRestartableTask.run(SequentialScheduler.java:205)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$CompleteRestartableTask.run(SequentialScheduler.java:149)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:230)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:303)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:256)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper.outgoing(SubscriberWrapper.java:232)
+	at java.net.http/jdk.internal.net.http.common.SSLFlowDelegate$Reader.processData(SSLFlowDelegate.java:513)
+	at java.net.http/jdk.internal.net.http.common.SSLFlowDelegate$Reader$ReaderDownstreamPusher.run(SSLFlowDelegate.java:268)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$LockingRestartableTask.run(SequentialScheduler.java:205)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$CompleteRestartableTask.run(SequentialScheduler.java:149)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:230)
+	... 3 common frames omitted
+25-10-20.16:00:51.678 [scheduling-1    ] ERROR MCPServerCSDNJob       - 定时任务，回调通知拼团完结任务失败
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions": EOF reached while reading
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.createResourceAccessException(DefaultRestClient.java:692)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:577)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:535)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:677)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:809)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:769)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:758)
+	at org.springframework.ai.openai.api.OpenAiApi.chatCompletionEntity(OpenAiApi.java:257)
+	at org.springframework.ai.openai.OpenAiChatModel.lambda$internalCall$1(OpenAiChatModel.java:274)
+	at org.springframework.retry.support.RetryTemplate.doExecute(RetryTemplate.java:357)
+	at org.springframework.retry.support.RetryTemplate.execute(RetryTemplate.java:230)
+	at org.springframework.ai.openai.OpenAiChatModel.lambda$internalCall$3(OpenAiChatModel.java:274)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.openai.OpenAiChatModel.internalCall(OpenAiChatModel.java:271)
+	at org.springframework.ai.openai.OpenAiChatModel.call(OpenAiChatModel.java:255)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultChatClientRequestSpec$1.aroundCall(DefaultChatClient.java:680)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextAroundCall$1(DefaultAroundAdvisorChain.java:98)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextAroundCall(DefaultAroundAdvisorChain.java:98)
+	at org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor.aroundCall(PromptChatMemoryAdvisor.java:89)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.lambda$nextAroundCall$1(DefaultAroundAdvisorChain.java:98)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.advisor.DefaultAroundAdvisorChain.nextAroundCall(DefaultAroundAdvisorChain.java:98)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:493)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.lambda$doGetObservableChatResponse$1(DefaultChatClient.java:482)
+	at io.micrometer.observation.Observation.observe(Observation.java:564)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetObservableChatResponse(DefaultChatClient.java:482)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.doGetChatResponse(DefaultChatClient.java:466)
+	at org.springframework.ai.chat.client.DefaultChatClient$DefaultCallResponseSpec.content(DefaultChatClient.java:516)
+	at cn.bugstack.knowledge.trigger.job.MCPServerCSDNJob.exec(MCPServerCSDNJob.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.io.EOFException: EOF reached while reading
+	at java.net.http/jdk.internal.net.http.Http2Connection$Http2TubeSubscriber.onComplete(Http2Connection.java:1371)
+	at java.net.http/jdk.internal.net.http.common.SSLTube$DelegateWrapper.onComplete(SSLTube.java:276)
+	at java.net.http/jdk.internal.net.http.common.SSLTube$SSLSubscriberWrapper.complete(SSLTube.java:440)
+	at java.net.http/jdk.internal.net.http.common.SSLTube$SSLSubscriberWrapper.onComplete(SSLTube.java:541)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper.checkCompletion(SubscriberWrapper.java:472)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper$DownstreamPusher.run1(SubscriberWrapper.java:334)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper$DownstreamPusher.run(SubscriberWrapper.java:259)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$LockingRestartableTask.run(SequentialScheduler.java:205)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$CompleteRestartableTask.run(SequentialScheduler.java:149)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:230)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:303)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:256)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper.outgoing(SubscriberWrapper.java:232)
+	at java.net.http/jdk.internal.net.http.common.SSLFlowDelegate$Reader.processData(SSLFlowDelegate.java:513)
+	at java.net.http/jdk.internal.net.http.common.SSLFlowDelegate$Reader$ReaderDownstreamPusher.run(SSLFlowDelegate.java:268)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$LockingRestartableTask.run(SequentialScheduler.java:205)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$CompleteRestartableTask.run(SequentialScheduler.java:149)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:230)
+	... 3 common frames omitted
